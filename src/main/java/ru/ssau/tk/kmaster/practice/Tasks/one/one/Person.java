@@ -18,7 +18,7 @@ public class Person {
         return secondName;
     }
 
-    public void setSecondName(String firstName) {
+    public void setSecondName(String secondName) {
         this.secondName = secondName;
     }
 
