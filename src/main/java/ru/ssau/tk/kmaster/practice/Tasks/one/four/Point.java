@@ -1,4 +1,4 @@
-package ru.ssau.tk.kmaster.practice.Tasks.one.three;
+package ru.ssau.tk.kmaster.practice.Tasks.one.four;
 
 public class Point {
     final public double x;
@@ -10,5 +10,4 @@ public class Point {
         this.y = y;
         this.z = z;
     }
-
 }
