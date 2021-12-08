@@ -5,12 +5,12 @@ import java.util.Random;
 
 public class GenPass {
 
-    static final private String alphabetLC = "abcdefghijklmnopqrstuvwxyz";
-    static final private String alphabetUC = alphabetLC.toUpperCase();
-    static final private String numbers = "1234567890";
-    static final private String symbols = "`!@#$%^&?*(){}[]|/.,-+=";
+    private static final String alphabetLC = "abcdefghijklmnopqrstuvwxyz";
+    private static final String alphabetUC = alphabetLC.toUpperCase();
+    private static final String numbers = "1234567890";
+    private static final String symbols = "`!@#$%^&?*(){}[]|/.,-+=";
 
-    static public String generatePassword(int count) {
+    public static String generatePassword(int count) {
 
         String all = alphabetLC + alphabetUC + numbers + symbols;
 
@@ -23,7 +23,7 @@ public class GenPass {
         return sb.toString();
     }
 
-    static public String generatePasswordWithoutSymbols(int count) {
+    public static String generatePasswordWithoutSymbols(int count) {
 
         String all = alphabetLC + alphabetUC + numbers;
 
