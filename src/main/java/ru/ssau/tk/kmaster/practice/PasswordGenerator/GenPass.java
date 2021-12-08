@@ -1,39 +1,56 @@
 package ru.ssau.tk.kmaster.practice.PasswordGenerator;
 
-import java.util.Locale;
 import java.util.Random;
 
 public class GenPass {
 
-    private static final String alphabetLC = "abcdefghijklmnopqrstuvwxyz";
-    private static final String alphabetUC = alphabetLC.toUpperCase();
-    private static final String numbers = "1234567890";
-    private static final String symbols = "`!@#$%^&?*(){}[]|/.,-+=";
+    private static final String LOWER = "abcdefghijklmnopqrstuvwxyz";
+    private static final String UPPER = LOWER.toUpperCase();
+    private static final String DIGITS = "1234567890";
+    private static final String SYMBOLS = "!@#$%&*()_+-=[]|,./?><";
 
-    public static String generatePassword(int count) {
+    static private boolean useLower;
+    static boolean useUpper;
+    static boolean useDigits;
+    static boolean useSymbols;
+    static int count;
 
-        String all = alphabetLC + alphabetUC + numbers + symbols;
+    public GenPass(boolean useLower, boolean useUpper, boolean useDigits, boolean useSymbols, int count) {
+        this.useDigits = useDigits;
+        this.useLower = useLower;
+        this.useUpper = useUpper;
+        this.useSymbols = useSymbols;
+        this.count = count;
 
-        Random rand = new Random();
-        StringBuilder sb = new StringBuilder();
-
-        for (int i = 0; i < count; i++) {
-            sb.append(all.charAt(rand.nextInt(all.length())));
-        }
-        return sb.toString();
     }
 
-    public static String generatePasswordWithoutSymbols(int count) {
+    public static String generatePassword() {
 
-        String all = alphabetLC + alphabetUC + numbers;
+        StringBuilder str = new StringBuilder();
 
-        Random rand = new Random();
-        StringBuilder sb = new StringBuilder();
-
-        for (int i = 0; i < count; i++) {
-            sb.append(all.charAt(rand.nextInt(all.length())));
+        if (useLower) {
+            str.append(LOWER);
         }
-        return sb.toString();
-    }
+        if (useUpper) {
+            str.append(UPPER);
+        }
+        if (useDigits) {
+            str.append(DIGITS);
+        }
+        if (useSymbols) {
+            str.append(SYMBOLS);
+        }
 
+        if (str.toString().equals("")) {
+            return "Пароль должен состоять из чего-то, повторите попытку!";
+        } else {
+            Random rand = new Random();
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < count; i++) {
+                sb.append(str.charAt(rand.nextInt(str.length())));
+            }
+            return "Ваш пароль: \n" + sb.toString();
+        }
+    }
 }
