@@ -9,5 +9,4 @@ public class Main {
         a2.makeSound();
         a3.letsGo();
     }
-
 }
