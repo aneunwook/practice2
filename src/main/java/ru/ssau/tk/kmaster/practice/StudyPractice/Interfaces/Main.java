@@ -1,4 +1,4 @@
-package ru.ssau.tk.kmaster.practice.Interfaces;
+package ru.ssau.tk.kmaster.practice.StudyPractice.Interfaces;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ru.ssau.tk.kmaster.practice.Interfaces;
+package ru.ssau.tk.kmaster.practice.StudyPractice.Interfaces;
 
 public class Animal implements Info {
 
