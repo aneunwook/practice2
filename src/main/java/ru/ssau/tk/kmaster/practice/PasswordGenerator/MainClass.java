@@ -16,27 +16,24 @@ public class MainClass {
         int num = console.nextInt();
         //TODO: реализовать проверку num на число
         System.out.println("Пароль должен состоять из маленьких англ. букв?");
-        String str = console.next();
-        if (str.equalsIgnoreCase("Да") || str.equalsIgnoreCase("Yes") || str.equals("+")) {
-            useLower = true;
-        }
+        useLower = getFlag(useLower);
         System.out.println("Пароль должен состоять из больших англ. букв?");
-        str = console.next();
-        if (str.equalsIgnoreCase("Да") || str.equalsIgnoreCase("Yes") || str.equals("+")) {
-            useUpper = true;
-        }
+        useUpper = getFlag(useUpper);
         System.out.println("Пароль должен состоять из цифр?");
-        str = console.next();
-        if (str.equalsIgnoreCase("Да") || str.equalsIgnoreCase("Yes") || str.equals("+")) {
-            useDigits = true;
-        }
+        useDigits = getFlag(useDigits);
         System.out.println("Пароль должен состоять из символов?");
-        str = console.next();
-        if (str.equalsIgnoreCase("Да") || str.equalsIgnoreCase("Yes") || str.equals("+")) {
-            useSymbols = true;
-        }
+        useSymbols = getFlag(useSymbols);
 
         GenPass genPass = new GenPass(useLower, useUpper, useDigits, useSymbols, num);
         System.out.println(genPass.generatePassword());
+    }
+
+    public static boolean getFlag(boolean a) {
+        Scanner console = new Scanner(System.in);
+        String str = console.next();
+        if (str.equalsIgnoreCase("Да") || str.equalsIgnoreCase("Yes") || str.equals("+")) {
+            a = true;
+        }
+        return a;
     }
 }
