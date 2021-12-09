@@ -1,4 +1,4 @@
-package ru.ssau.tk.kmaster.practice.StudyPractice.Enums;
+package ru.ssau.tk.kmaster.practice.StudyPractice.Enums.FirstExample;
 
 public enum Level {
     BEGGINER("green"),
