@@ -1,4 +1,4 @@
-package ru.ssau.tk.kmaster.practice;
+package ru.ssau.tk.kmaster.practice.StudyPractice;
 
 import org.junit.Test;
 
