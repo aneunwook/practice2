@@ -21,7 +21,7 @@ public class GenPass {
         this.useUpper = useUpper;
         this.useSymbols = useSymbols;
         this.count = count;
-
+        
     }
 
     public static String generatePassword() {
