@@ -2,9 +2,8 @@ package ru.ssau.tk.kmaster.practice.Tasks;
 
 public class Test {
     public static void main(String[] args) {
-        Person p_1 = new Person();
-        Person p_2 = new Person(1234);
-        Person p_3 = new Person("Кирилл", "Крылов");
-        Person p_4 = new Person("Кирилл", "Крылов", 3616);
+        Point point_1 = new Point(3.2,1.3,6.2);
+        Point point_2 = new Point(6.9,3.12,9.1);
+        Point point_3 = new Point(5.1,5.6,3.913);
     }
 }
