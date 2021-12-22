@@ -2,8 +2,11 @@ package ru.ssau.tk.kmaster.practice.Tasks;
 
 public class Test {
     public static void main(String[] args) {
-        Point point_1 = new Point(3.2,1.3,6.2);
-        Point point_2 = new Point(6.9,3.12,9.1);
-        Point point_3 = new Point(5.1,5.6,3.913);
+        Point p_1 = new Point(1.2, 3.1, 6.7);
+        Point p_2 = new Point(3.6, 1.2, 7);
+        Point p_3 = Points.sum(p_1, p_2);
+        Point p_4 = Points.subtract(p_1, p_2);
+        Point p_5 = Points.multiply(p_1, p_2);
+        Point p_6 = Points.divide(p_1, p_2);
     }
 }
