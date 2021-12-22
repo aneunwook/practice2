@@ -34,6 +34,14 @@ public class Points {
         return new Point(1 / p.x, 1 / p.y, 1 / p.z);
     }
 
+    static public double scalarProduct(Point p_1, Point p_2) {
+        return p_1.x * p_2.x + p_1.y * p_2.y + p_1.z * p_2.z;
+    }
+
+    static public Point vectorProduct(Point p_1, Point p_2) {
+        return new Point(p_1.y * p_2.z - p_2.y * p_1.z, -(p_1.x * p_2.z - p_2.x * p_1.z), p_1.x * p_2.y - p_2.x * p_1.y);
+    }
+
     private Points() {
     }
 }
