@@ -6,6 +6,24 @@ public class Person {
     private String secondName;
     private int passportId;
 
+    public Person() {
+    }
+
+    public Person(String firstName, String secondName) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+    }
+
+    public Person(int passportId) {
+        this.passportId = passportId;
+    }
+
+    public Person(String firstName, String secondName, int passportId) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.passportId = passportId;
+    }
+
     public String getFirstName() {
         return firstName;
     }
