@@ -1,23 +1,21 @@
 package ru.ssau.tk.kmaster.practice.Algorithms;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class QuickSort {
     public static void main(String[] args) {
 
-        //int[] array = new int[]{58, 29, 85, 41, 23, 35, 61, 42, 75, 24, 47, 55, 63};
-        //System.out.println("Source array: " + arrayToString(array) + "\n");
-        //quickSort(array, 0, array.length - 1);
-        //System.out.println("Quick sort array: " + arrayToString(array));
-        test();
+        int[] array = new int[]{58, 29, 85, 41, 23, 35, 61, 42, 75, 24, 47, 55, 63};
+        System.out.println("Source array: " + arrayToString(array) + "\n");
+        quickSort(array, 0, array.length - 1);
+        System.out.println("Quick sort array: " + arrayToString(array));
     }
 
     public static void quickSort(int[] arr, int from, int to) {
 
         if (from < to) {
             int divideIndex = partition(arr, from, to);
-            //printSortStep(arr, from, to, divideIndex);
+            printSortStep(arr, from, to, divideIndex);
             quickSort(arr, from, divideIndex - 1);
             quickSort(arr, divideIndex, to);
         }
@@ -71,44 +69,5 @@ public class QuickSort {
         System.out.print("\npartition at index: " + partitionIndex);
         System.out.print(", left: " + arrayToString(Arrays.copyOfRange(arr, from, partitionIndex)));
         System.out.println(", right: " + arrayToString(Arrays.copyOfRange(arr, partitionIndex, to + 1)) + "\n");
-    }
-
-    private static void bubbleSort(int[] arr) {
-        boolean sorted = false;
-        while (!sorted) {
-            sorted = true;
-            for (int i = 1; i < arr.length; i++) {
-                if (arr[i - 1] > arr[i]) {
-                    swap(arr, i - 1, i);
-                    sorted = false;
-                }
-            }
-        }
-    }
-
-    private static void measureTime(Runnable task) {
-        long startTime = System.currentTimeMillis();
-        task.run();
-        long elapsed = System.currentTimeMillis() - startTime;
-        System.out.println("Затраченное время: " + elapsed + " ms");
-    }
-
-    private static void test() {
-        int testLen = 100_000;
-
-        int[] arr1 = new int[testLen];
-        int[] arr2 = new int[testLen];
-
-        Random r = new Random();
-
-        for (int i = 0; i < testLen; i++) {
-            arr1[i] = arr2[i] = r.nextInt(10000);
-        }
-
-        System.out.println("Быстрая сортировка");
-        measureTime(() -> quickSort(arr1, 0, testLen - 1));
-
-        System.out.println("Пузырьковая сортировка");
-        measureTime(() -> bubbleSort(arr2));
     }
 }
