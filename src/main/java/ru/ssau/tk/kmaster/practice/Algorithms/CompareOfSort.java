@@ -111,7 +111,7 @@ public class CompareOfSort {
     }
 
         private static void test() {
-            int testLen = 100_000;
+            int testLen = 100_000_000;
 
             int[] arr1 = new int[testLen];
             int[] arr2 = new int[testLen];
