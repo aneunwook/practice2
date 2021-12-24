@@ -4,9 +4,9 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         int[] array = new int[]{58, 29, 85, 41, 23, 35, 61, 42, 75, 24, 47, 55, 63};
-        System.out.println(arrayToString(array));
+        System.out.println("Source array: " + arrayToString(array));
         bubbleSort(array);
-        System.out.println(arrayToString(array));
+        System.out.println("Sort array: " + arrayToString(array));
     }
 
     private static String arrayToString(int[] array) {
@@ -29,13 +29,13 @@ public class BubbleSort {
     }
 
     private static void bubbleSort(int[] arr) {
-        boolean sorted = false;
-        while (!sorted) {
-            sorted = true;
+        boolean isSorted = false;
+        while (!isSorted) {
+            isSorted = true;
             for (int i = 1; i < arr.length; i++) {
                 if (arr[i - 1] > arr[i]) {
                     swap(arr, i - 1, i);
-                    sorted = false;
+                    isSorted = false;
                 }
             }
         }
