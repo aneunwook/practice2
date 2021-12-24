@@ -6,10 +6,9 @@ public class QuickSort {
     public static void main(String[] args) {
 
         int[] array = new int[]{58, 29, 85, 41, 23, 35, 61, 42, 75, 24, 47, 55, 63};
-
-        System.out.println(arrayToString(array));
-
+        System.out.println("Source array: " + arrayToString(array) + "\n");
         quickSort(array, 0, array.length - 1);
+        System.out.println("Quick sort array: " + arrayToString(array));
     }
 
     public static void quickSort(int[] arr, int from, int to) {
