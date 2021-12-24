@@ -69,22 +69,68 @@ public class CompareOfSort {
         System.out.println("Затраченное время: " + elapsed + " ms");
     }
 
-    private static void test() {
-        int testLen = 100_000;
+    private static void merge(int[] src1, int src1Start, int[] src2, int src2Start,
+                              int[] dest, int destStart, int size) {
+        int index1 = src1Start;
+        int index2 = src2Start;
 
-        int[] arr1 = new int[testLen];
-        int[] arr2 = new int[testLen];
+        int src1End = Math.min(src1Start + size, src1.length);
+        int src2End = Math.min(src2Start + size, src2.length);
 
-        Random r = new Random();
+        int iterationCount = src1End - src1Start + src2End - src2Start;
 
-        for (int i = 0; i < testLen; i++) {
-            arr1[i] = arr2[i] = r.nextInt(10000);
+        for (int i = destStart; i < destStart + iterationCount; i++) {
+            if (index1 < src1End && (index2 >= src2End || src1[index1] < src2[index2])) {
+                dest[i] = src1[index1];
+                index1++;
+            } else {
+                dest[i] = src2[index2];
+                index2++;
+            }
         }
-
-        System.out.println("Быстрая сортировка");
-        measureTime(() -> quickSort(arr1, 0, testLen - 1));
-
-        System.out.println("Пузырьковая сортировка");
-        measureTime(() -> bubbleSort(arr2));
     }
+
+    private static void mergeSort(int[] array) {
+        int[] tmp;
+        int[] currentSrc = array;
+        int[] currentDest = new int[array.length];
+
+        int size = 1;
+
+        while (size < array.length) {
+            for (int i = 0; i < array.length; i += 2 * size) {
+                merge(currentSrc, i, currentSrc, i + size, currentDest, i, size);
+            }
+
+            tmp = currentSrc;
+            currentSrc = currentDest;
+            currentDest = tmp;
+
+            size *= 2;
+        }
+    }
+
+        private static void test() {
+            int testLen = 100_000;
+
+            int[] arr1 = new int[testLen];
+            int[] arr2 = new int[testLen];
+            int[] arr3 = new int[testLen];
+
+
+            Random r = new Random();
+
+            for (int i = 0; i < testLen; i++) {
+                arr1[i] =arr2[i] = arr3[i] = r.nextInt(10000);
+            }
+
+            System.out.println("Быстрая сортировка");
+            measureTime(() -> quickSort(arr1, 0, testLen - 1));
+
+            System.out.println("Сортировка слиянием");
+            measureTime(() -> mergeSort(arr2));
+
+            System.out.println("Пузырьковая сортировка");
+            measureTime(() -> bubbleSort(arr3));
+        }
 }
