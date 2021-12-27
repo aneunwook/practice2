@@ -6,16 +6,52 @@ import org.testng.Assert;
 
 public class PersonTest {
     @Test
-    public static void testingSettersAndGetters() {
-        Person person = new Person();
-        person.setFirstName("Krylov");
-        person.setSecondName("Kirill");
-        person.setPassportId(3912);
+        public static void testingFirstName() {
+            Person person = new Person();
+            person.setFirstName("Kirill");
+            Assert.assertEquals(person.getFirstName(), "Kirill");
+        }
 
-        Assert.assertEquals(person.getFirstName(), "Krylov");
-        Assert.assertEquals(person.getSecondName(), "Kirill");
-        Assert.assertEquals(person.getPassportId(), 3912);
-    }
+        @Test
+        public static void testingLastName() {
+            Person person = new Person();
+            person.setSecondName("Krylov");
+            Assert.assertEquals(person.getSecondName(), "Krylov");
+        }
 
+        @Test
+        public static void testingPassportId() {
+            Person person = new Person();
+            person.setPassportId(1234);
+            Assert.assertEquals(person.getPassportId(), 1234);
+        }
 
+        @Test
+        public static void testingConstructorWithoutParametersConstructor() {
+            Person person = new Person();
+            Assert.assertEquals(person.getFirstName(), "Unknown");
+            Assert.assertEquals(person.getSecondName(), "Unknown");
+            Assert.assertEquals(person.getPassportId(), 0);
+        }
+
+        @Test
+        public static void testingConstructorWithOneParameter() {
+            Person person = new Person(1234);
+            Assert.assertEquals(person.getPassportId(), 1234);
+        }
+
+        @Test
+        public static void testingConstructorWithTwoParameter() {
+            Person person = new Person("Kirill", "Krylov");
+            Assert.assertEquals(person.getFirstName(), "Kirill");
+            Assert.assertEquals(person.getSecondName(), "Krylov");
+        }
+
+        @Test
+        public static void testingConstructorWithThreeParameter() {
+            Person person = new Person("Kirill", "Krylov", 1234);
+            Assert.assertEquals(person.getFirstName(), "Kirill");
+            Assert.assertEquals(person.getSecondName(), "Krylov");
+            Assert.assertEquals(person.getPassportId(), 1234);
+        }
 }
