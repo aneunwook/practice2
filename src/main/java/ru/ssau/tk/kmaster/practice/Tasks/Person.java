@@ -7,6 +7,9 @@ public class Person {
     private int passportId;
 
     public Person() {
+        this.firstName = "Unknown";
+        this.secondName = "Unknown";
+        this.passportId = 0;
     }
 
     public Person(String firstName, String secondName) {
