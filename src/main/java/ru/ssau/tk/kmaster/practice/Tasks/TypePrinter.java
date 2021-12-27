@@ -4,20 +4,6 @@ import java.util.Objects;
 
 public class TypePrinter {
 
-    public static void main(String[] args) {
-        byte number = 0;
-        printType(number);
-        printType((char) number);
-        printType((short) number);
-        printType((int) number);
-        printType((long) number);
-        printType((float) number);
-        printType((double) number);
-        printType(true);
-        printType(new Person());
-        printType(null);
-    }
-
     public static void printType(byte number) {
         System.out.println("Byte " + number);
     }
