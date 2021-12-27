@@ -1,5 +1,7 @@
 package ru.ssau.tk.kmaster.practice.Tasks;
 
+import java.util.ArrayList;
+
 public class MyArrays {
 
     public static int[] size(int length) {
@@ -116,6 +118,16 @@ public class MyArrays {
         for (int element = 1; element < numberOfMembers; element++) {
             array[element] = firstMember * denominator;
             firstMember *= denominator;
+        }
+        return array;
+    }
+
+    public static ArrayList<Integer> divisorOfNumber(int number) {
+        ArrayList<Integer> array = new ArrayList<>();
+        for (int element = 1; element <= Math.sqrt(Math.abs(number)); element++) {
+            if (number % (element) == 0) {
+                array.add(element);
+            }
         }
         return array;
     }
