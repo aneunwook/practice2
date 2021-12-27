@@ -21,4 +21,15 @@ public class MyArraysTest {
         Assert.assertEquals(generator(4)[2], 1);
         Assert.assertEquals(generator(4)[3], 2);
     }
+
+    @Test
+    public static void testOddArray() {
+        Assert.assertEquals(oddArray(7)[0], 1);
+        Assert.assertEquals(oddArray(7)[1], 3);
+        Assert.assertEquals(oddArray(7)[2], 5);
+        Assert.assertEquals(oddArray(7)[3], 7);
+        Assert.assertEquals(oddArray(7)[4], 9);
+        Assert.assertEquals(oddArray(7)[5], 11);
+        Assert.assertEquals(oddArray(7)[6], 13);
+    }
 }

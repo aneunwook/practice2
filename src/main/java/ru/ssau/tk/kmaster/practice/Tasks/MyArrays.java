@@ -15,4 +15,12 @@ public class MyArrays {
         }
         return array;
     }
+
+    public static int[] oddArray(int length) {
+        int[] array = new int[length];
+        for (int element = 0; element < length; element++) {
+            array[element] = 2 * element + 1;
+        }
+        return array;
+    }
 }
