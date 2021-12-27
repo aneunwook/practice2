@@ -109,4 +109,14 @@ public class MyArrays {
         }
         return array;
     }
+
+    public static int[] geometricProgression(int firstMember, int denominator, int numberOfMembers) {
+        int[] array = new int[numberOfMembers];
+        array[0] = firstMember;
+        for (int element = 1; element < numberOfMembers; element++) {
+            array[element] = firstMember * denominator;
+            firstMember *= denominator;
+        }
+        return array;
+    }
 }
