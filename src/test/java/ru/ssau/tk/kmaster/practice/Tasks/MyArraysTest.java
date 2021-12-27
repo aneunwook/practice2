@@ -7,6 +7,8 @@ import static ru.ssau.tk.kmaster.practice.Tasks.MyArrays.*;
 
 public class MyArraysTest {
 
+    public static final double DELTA = 0.0001;
+
     @Test
     public static void testSize() {
         Assert.assertEquals(size(13).length, 13);
@@ -68,5 +70,15 @@ public class MyArraysTest {
         Assert.assertEquals(squareOfNumbers(10)[7], 49);
         Assert.assertEquals(squareOfNumbers(10)[8], 64);
         Assert.assertEquals(squareOfNumbers(10)[9], 81);
+    }
+
+    @Test
+    public static void testQuadraticEquation() {
+        double[] emptyArray = {};
+        Assert.assertEquals(quadraticEquation(2, 3, 4), new double[0]);
+        Assert.assertEquals(quadraticEquation(0, 3, 4)[0], -1.3333, DELTA);
+        Assert.assertEquals(quadraticEquation(2, 8, 2)[0], -0.2679, DELTA);
+        Assert.assertEquals(quadraticEquation(2, 8, 2)[1], -3.7320, DELTA);
+        Assert.assertEquals(quadraticEquation(0, 0, 0)[0], Double.NaN);
     }
 }
