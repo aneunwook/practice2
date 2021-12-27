@@ -5,11 +5,21 @@ public class Person {
     private String firstName;
     private String secondName;
     private int passportId;
+    Gender gender;
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
 
     public Person() {
         this.firstName = "Unknown";
         this.secondName = "Unknown";
         this.passportId = 0;
+        this.gender = Gender.MALE;
     }
 
     public Person(String firstName, String secondName) {
@@ -21,10 +31,11 @@ public class Person {
         this.passportId = passportId;
     }
 
-    public Person(String firstName, String secondName, int passportId) {
+    public Person(String firstName, String secondName, int passportId, Gender gender) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.passportId = passportId;
+        this.gender = gender;
     }
 
     public String getFirstName() {
