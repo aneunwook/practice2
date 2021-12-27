@@ -23,4 +23,12 @@ public class MyArrays {
         }
         return array;
     }
+
+    public static int[] evenArray(int length) {
+        int[] array = new int[length];
+        for (int element = length - 1; element >= 0; element--) {
+            array[element] = 2 * element + 2;
+        }
+        return array;
+    }
 }
