@@ -1,6 +1,6 @@
 package ru.ssau.tk.kmaster.practice.Tasks;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class MyArrays {
 
@@ -129,6 +129,26 @@ public class MyArrays {
                 array.add(element);
             }
         }
+        return array;
+    }
+
+    public static boolean isItSimple(Integer number) {
+        for (int divider = number - 1; divider > 1; divider--) {
+            if (number % divider == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static ArrayList<Integer> primeNumbers(int number) {
+        ArrayList<Integer> array = new ArrayList<>();
+        for (int primeNumber = number; primeNumber > 1; primeNumber--) {
+            if (isItSimple(primeNumber)) {
+                array.add(primeNumber);
+            }
+        }
+        Collections.reverse(array);
         return array;
     }
 }
