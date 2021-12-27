@@ -4,6 +4,13 @@ import java.util.*;
 
 public class MyArrays {
 
+
+    public static void main(String[] args) {
+        String[] array = new String[]{"Привет! ", "Это ", "массив ", "строк"};
+        printArray(array);
+        System.out.println(Arrays.toString(array));
+    }
+
     public static int[] size(int length) {
         return new int[length];
     }
@@ -370,9 +377,13 @@ public class MyArrays {
         System.out.println();
     }
 
-    public static void main(String[] args) {
-        String[] array = new String[]{"Привет! ", "Это ", "массив ", "строк"};
-        printArray(array);
-        System.out.println(Arrays.toString(array));
+    public static double multiplicationOfArrayElements(double[] array) {
+        double multiplication = 1.0;
+        for (double i : array) {
+            if (!Double.isNaN(i) && i != Double.POSITIVE_INFINITY && i != Double.NEGATIVE_INFINITY) {
+                multiplication *= i;
+            }
+        }
+        return multiplication;
     }
 }
