@@ -18,4 +18,9 @@ public class MyLinesTest {
         String newString = "Привет, мир!";
         MyLines.stringOfBytes(newString);
     }
+
+    @Test
+    public static void testComparison() {
+        MyLines.comparison();
+    }
 }
