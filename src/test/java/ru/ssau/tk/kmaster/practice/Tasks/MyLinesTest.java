@@ -126,4 +126,9 @@ public class MyLinesTest {
         String[] array = new String[]{"gdag", "argarg", "adaerh"};
         Assert.assertEquals(MyLines.fromArrayToString(array), "gdag, argarg, adaerh");
     }
+
+    @Test
+    public static void testReplacingCharacterWithIndex() {
+        Assert.assertEquals(MyLines.replacingCharacterWithIndex("абракадабра"), "01р8а6а4а2б0");
+    }
 }
