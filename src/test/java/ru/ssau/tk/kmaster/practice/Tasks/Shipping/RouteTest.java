@@ -5,6 +5,9 @@ import org.testng.annotations.Test;
 
 import java.util.*;
 
+import static ru.ssau.tk.kmaster.practice.Tasks.Shipping.SettlementType.CITY;
+import static ru.ssau.tk.kmaster.practice.Tasks.Shipping.WaypointType.EMPTY;
+
 public class RouteTest {
 
     @Test
@@ -183,5 +186,28 @@ public class RouteTest {
         routeOne.addNewLocation(villageOne);
 
         Assert.assertNotEquals(routeTwo, routeOne);
+    }
+
+    @Test
+    public static void testToString() {
+        Route routeOne = new Route();
+        Settlement city = new Settlement();
+        city.setType(CITY);
+        city.setName("Москва");
+        city.setId(123);
+        city.setLatitude(234.55);
+        city.setLongitude(345.75);
+
+        Waypoint villageOne = new Waypoint();
+        villageOne.setType(EMPTY);
+        villageOne.setName("Павлово");
+        villageOne.setId(345);
+        villageOne.setLatitude(123.45);
+        villageOne.setLongitude(789.65);
+
+        routeOne.addNewLocation(city);
+        routeOne.addNewLocation(villageOne);
+
+        System.out.println(routeOne);
     }
 }

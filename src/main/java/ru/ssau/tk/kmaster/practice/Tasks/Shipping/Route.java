@@ -75,4 +75,14 @@ public final class Route implements Iterable {
     public int hashCode() {
         return Objects.hash(locations);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Location location : getLocations()) {
+            stringBuilder.append(location);
+            stringBuilder.append('\n');
+        }
+        return String.valueOf(stringBuilder);
+    }
 }
