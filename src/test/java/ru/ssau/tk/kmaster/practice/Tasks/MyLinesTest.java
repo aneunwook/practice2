@@ -90,4 +90,11 @@ public class MyLinesTest {
         Assert.assertEquals(MyLines.replacingString("ороророро", "оро", "ро"), "роррро");
         Assert.assertEquals(MyLines.replacingString("гиппопотам", "по", "тук"), "гиптуктуктам");
     }
+
+    @Test
+    public static void testSubstring() {
+        Assert.assertEquals(MyLines.substring("аргентина", 2, 5), "ген");
+        Assert.assertEquals(MyLines.substring("аргентина", -1, 11), "аргентина");
+        Assert.assertEquals(MyLines.substring("аргентина", -1, -2), "");
+    }
 }
