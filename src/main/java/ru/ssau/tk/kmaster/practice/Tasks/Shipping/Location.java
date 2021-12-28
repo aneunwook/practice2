@@ -1,5 +1,7 @@
 package ru.ssau.tk.kmaster.practice.Tasks.Shipping;
 
+import java.util.Objects;
+
 public class Location {
 
     private int id;
@@ -37,5 +39,18 @@ public class Location {
 
     public double getLongitude() {
         return longitude;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Location location = (Location) o;
+        return id == location.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
