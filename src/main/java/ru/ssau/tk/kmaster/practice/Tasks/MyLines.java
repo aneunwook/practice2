@@ -2,6 +2,8 @@ package ru.ssau.tk.kmaster.practice.Tasks;
 
 import static java.lang.String.join;
 
+import java.nio.charset.Charset;
+
 public class MyLines {
 
     public static void stringCharacter(String string) {
@@ -137,5 +139,9 @@ public class MyLines {
             string.append(element).append(" ");
         }
         return string.toString();
+    }
+
+    public static void defaultEncoding() {
+        System.out.println(Charset.defaultCharset());
     }
 }
