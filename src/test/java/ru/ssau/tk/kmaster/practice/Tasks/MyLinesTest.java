@@ -97,4 +97,22 @@ public class MyLinesTest {
         Assert.assertEquals(MyLines.substring("аргентина", -1, 11), "аргентина");
         Assert.assertEquals(MyLines.substring("аргентина", -1, -2), "");
     }
+
+    @Test
+    public static void testPrintObject() {
+        Person person = new Person("Kirill", "Krylov", 1234, Gender.MALE);
+        Point point = new Point(1, 2, 3);
+        NamedPoint namedPoint = new NamedPoint(1, 2, 3, "Точка");
+        Matrix matrix = new Matrix(2, 3);
+        matrix.setAt(0, 0, 1);
+        matrix.setAt(0, 1, 2);
+        matrix.setAt(0, 2, 3);
+        matrix.setAt(1, 0, 4);
+        matrix.setAt(1, 1, 5);
+        matrix.setAt(1, 2, 6);
+        MyLines.printObject(person);
+        MyLines.printObject(point);
+        MyLines.printObject(namedPoint);
+        MyLines.printObject(matrix);
+    }
 }
