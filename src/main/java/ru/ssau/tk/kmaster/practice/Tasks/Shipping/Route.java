@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
-public class Route implements Iterable {
+public final class Route implements Iterable {
 
     private final List<Location> locations = new ArrayList<>();
 
@@ -61,5 +61,18 @@ public class Route implements Iterable {
                 break;
             }
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Route locations1 = (Route) o;
+        return Objects.equals(locations, locations1.locations);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(locations);
     }
 }
