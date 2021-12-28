@@ -78,4 +78,16 @@ public class MyLinesTest {
         string = new String[]{"abcdf", "adref", "antjkf", "dsgbf"};
         Assert.assertEquals(MyLines.postfixAndPrefix(string, "a", "f"), 3);
     }
+
+    @Test
+    public static void testNumberOfRows() {
+        String[] string = new String[]{"     1237653425    ", "   98534575  ", "  1366475  "};
+        Assert.assertEquals(MyLines.numberOfRows(string, "1", "5"), 2);
+    }
+
+    @Test
+    public static void testReplacingString() {
+        Assert.assertEquals(MyLines.replacingString("ороророро", "оро", "ро"), "роррро");
+        Assert.assertEquals(MyLines.replacingString("гиппопотам", "по", "тук"), "гиптуктуктам");
+    }
 }

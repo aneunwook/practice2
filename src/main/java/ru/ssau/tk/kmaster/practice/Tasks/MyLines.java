@@ -63,4 +63,25 @@ public class MyLines {
         }
         return count;
     }
+
+    public static int numberOfRows(String[] string, String prefix, String postfix) {
+        int count = 0;
+        String element;
+        for (String index : string) {
+            element = index.trim();
+            if (element.startsWith(prefix) && element.endsWith(postfix)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static String replacingString(String stringOne, String stringTwo, String stringThree) {
+        for (int i = 0; i < 10; i++) {
+            if (stringOne.contains(stringTwo)) {
+                stringOne = stringOne.replaceAll(stringTwo, stringThree);
+            }
+        }
+        return stringOne;
+    }
 }
