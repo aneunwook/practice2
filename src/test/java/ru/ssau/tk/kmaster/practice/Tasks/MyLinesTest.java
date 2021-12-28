@@ -44,4 +44,16 @@ public class MyLinesTest {
         Assert.assertFalse(MyLines.stringComparison(stringOne, "HELLO"));
         Assert.assertFalse(MyLines.stringComparison(stringOne, "hello"));
     }
+
+    @Test
+    public static void testScreening() {
+        MyLines.screening();
+    }
+
+    @Test
+    public static void testIndexOfString() {
+        Assert.assertEquals(MyLines.indexOfString("понимать", "мать"), 4);
+        Assert.assertEquals(MyLines.indexOfString("абракадабра", "бра"), 1);
+        Assert.assertEquals(MyLines.indexOfString("абракадабра", "бам"), -1);
+    }
 }

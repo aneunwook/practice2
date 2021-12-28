@@ -17,8 +17,7 @@ public class MyLines {
 
     public static void comparison() {
         String stringOne = "Hello!";
-        String stringTwo = new String(stringOne);
-        System.out.println(stringTwo.equals(stringOne));
+        System.out.println(stringOne);
     }
 
     public static boolean palindrome(String string) {
@@ -31,5 +30,19 @@ public class MyLines {
             return false;
         }
         return !stringOne.equals(stringTwo) && !stringOne.equalsIgnoreCase(stringTwo);
+    }
+
+    public static void screening() {
+        int i = 0;
+        System.out.println("Символ\t№" + ++i);
+        System.out.println("Символ\b№" + ++i);
+        System.out.println("Символ\n№" + ++i);
+        System.out.println("Символ\r№" + ++i);
+        System.out.println("Символ\"№" + ++i);
+        System.out.println("Символ\\№" + ++i);
+    }
+
+    public static int indexOfString(String stringOne, String stringTwo) {
+        return stringOne.indexOf(stringTwo);
     }
 }
