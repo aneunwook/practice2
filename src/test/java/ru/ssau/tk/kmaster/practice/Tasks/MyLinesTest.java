@@ -131,4 +131,10 @@ public class MyLinesTest {
     public static void testReplacingCharacterWithIndex() {
         Assert.assertEquals(MyLines.replacingCharacterWithIndex("абракадабра"), "01р8а6а4а2б0");
     }
+
+    @Test
+    public static void testStringOfNumbers() {
+        Assert.assertEquals(MyLines.stringOfNumbers(10), "0 1 2 3 4 5 6 7 8 9 ");
+        System.out.println(MyLines.stringOfNumbers(10000));
+    }
 }
