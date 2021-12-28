@@ -120,4 +120,10 @@ public class MyLinesTest {
     public static void testArrayString() {
         Assert.assertEquals(MyLines.arrayString("rtrta a  sgafg aetag"), new String[]{"Rtrta", "A", "", "Sgafg", "Aetag"});
     }
+
+    @Test
+    public static void testFromArrayToString() {
+        String[] array = new String[]{"gdag", "argarg", "adaerh"};
+        Assert.assertEquals(MyLines.fromArrayToString(array), "gdag, argarg, adaerh");
+    }
 }
