@@ -47,4 +47,10 @@ public class NamedPointTest {
         object.reset();
         Assert.assertEquals(object.getName(), "Absent");
     }
+
+    @Test
+    public static void testToString() {
+        NamedPoint point = new NamedPoint(1, 2, 3, "Point");
+        Assert.assertEquals(point.toString(), "Point [1.0, 2.0, 3.0]");
+    }
 }
