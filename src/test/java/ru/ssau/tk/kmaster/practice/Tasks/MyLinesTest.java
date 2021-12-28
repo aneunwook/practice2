@@ -70,4 +70,12 @@ public class MyLinesTest {
         Assert.assertEquals(MyLines.lastIndexOfString("12345343534", "35"), 7);
         Assert.assertEquals(MyLines.lastIndexOfString("345121212", "99"), -1);
     }
+
+    @Test
+    public static void testPostfixAndPrefix() {
+        String[] string = new String[]{"1234", "12678", "2348"};
+        Assert.assertEquals(MyLines.postfixAndPrefix(string, "12", "8"), 1);
+        string = new String[]{"abcdf", "adref", "antjkf", "dsgbf"};
+        Assert.assertEquals(MyLines.postfixAndPrefix(string, "a", "f"), 3);
+    }
 }
