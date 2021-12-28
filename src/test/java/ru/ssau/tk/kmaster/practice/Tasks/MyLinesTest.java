@@ -3,6 +3,8 @@ package ru.ssau.tk.kmaster.practice.Tasks;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.nio.charset.StandardCharsets;
+
 public class MyLinesTest {
 
     @Test
@@ -141,5 +143,13 @@ public class MyLinesTest {
     @Test
     public static void testDefaultEncoding() {
         MyLines.defaultEncoding();
+    }
+
+    @Test
+    public static void testEncodings() {
+        System.out.println(MyLines.encodings("Привет", StandardCharsets.UTF_8, StandardCharsets.UTF_16));
+        System.out.println(MyLines.encodings("Привет", StandardCharsets.UTF_16, StandardCharsets.UTF_8));
+        System.out.println(MyLines.encodings("Привет", StandardCharsets.UTF_8, StandardCharsets.ISO_8859_1));
+        System.out.println(MyLines.encodings("Привет", StandardCharsets.UTF_8, StandardCharsets.UTF_16LE));
     }
 }
