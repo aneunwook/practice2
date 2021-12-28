@@ -61,4 +61,9 @@ public class Person {
     public void setPassportId(int passportId) {
         this.passportId = passportId;
     }
+
+    @Override
+    public String toString() {
+        return "Это " + firstName + " " + secondName;
+    }
 }
