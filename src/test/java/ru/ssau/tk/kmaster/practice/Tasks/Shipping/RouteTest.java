@@ -59,4 +59,34 @@ public class RouteTest {
         route.removeLocation(0);
         Assert.assertEquals(route.getLocations(), new ArrayList<>());
     }
+
+    @Test
+    public static void testIterator() {
+        Route route = new Route();
+        Location city = new Settlement();
+        city.setId(0);
+        Location villageOne = new Waypoint();
+        villageOne.setId(1);
+        Location villageTwo = new Settlement();
+        villageTwo.setId(2);
+        route.addNewLocation(city);
+        route.addNewLocation(villageOne);
+        route.addNewLocation(villageTwo);
+    }
+
+    @Test
+    public static void testGetterFirstAndLastLocations() {
+        Route route = new Route();
+        Location city = new Settlement();
+        city.setName("Самара");
+        Location villageOne = new Waypoint();
+        villageOne.setName("Безенчук");
+        Location villageTwo = new Settlement();
+        villageTwo.setName("Бебра");
+        route.addNewLocation(city);
+        route.addNewLocation(villageOne);
+        route.addNewLocation(villageTwo);
+        Assert.assertEquals(route.getFirstLocation().getName(), "Самара");
+        Assert.assertEquals(route.getLastLocation().getName(), "Бебра");
+    }
 }
