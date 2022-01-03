@@ -1,5 +1,6 @@
 package ru.ssau.tk.kmaster.practice.StudyPractice.Collections.ArrayListCopy;
 
+import java.util.Collection;
 import java.util.Iterator;
 
 public class MyArrayList<T> implements MyList<T> {
@@ -8,6 +9,11 @@ public class MyArrayList<T> implements MyList<T> {
 
     public MyArrayList() {
         array = (T[]) new Object[0];
+    }
+
+    public MyArrayList(Collection<? extends T> arr) {
+        Object[] a = arr.toArray();
+        array = (T[]) a;
     }
 
     @Override
