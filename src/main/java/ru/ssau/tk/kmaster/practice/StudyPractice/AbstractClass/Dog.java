@@ -1,7 +1,13 @@
 package ru.ssau.tk.kmaster.practice.StudyPractice.AbstractClass;
 
 public class Dog extends Animal {
-    public void makeSound() {
-        System.out.println("bark_bark");
-    }
+
+	@Override
+	public void makeSound() {
+		System.out.println("¸Û¸Û");
+		
+	}
+	
+    
+    
 }
