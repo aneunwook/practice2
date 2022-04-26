@@ -12,7 +12,7 @@ public class Main {
         
         cat2.letsGo();
         
-        //cat.catOnly();
+        //cat.catOnly();/
         cat2.catOnly();
         
         Cat catDown= (Cat)cat;
