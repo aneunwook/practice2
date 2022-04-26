@@ -9,7 +9,7 @@ public class Cat extends Animal {
 	}
 	
 	public void catOnly() {
-		System.out.println("고양이만 입장 가능");
+		System.out.println("고양이만 입장 가능~");
 	}
    
 	public void catWorld() {
